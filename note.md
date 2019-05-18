@@ -1,4 +1,4 @@
-## 05 Apps, URLs & Templates
+## 05: Apps, URLs & Templates
 
 create new app pages
 ```
@@ -39,4 +39,36 @@ $ python manage.py collectstatic
 
 update /btre/.gitignore
 
-05:04
+install "Better Jinja" vs code extension
+
+locate the template /btre/dist/
+
+update from /dist/index.html to /templates/base.html
+
+create and update /templates/partials/_footer.html
+
+create and update /templates/partials/_navbar.html
+
+create and update /templates/partials/_topbar.html
+
+create new apps listings and realtors 
+```
+$ python manage.py startapp listings
+$ python manage.py startapp realtors
+```
+
+create and update /templates/listings/listing.html
+
+create and update /templates/listings/listings.html
+
+create and update /templates/listings/search.html
+
+create and update /templates/listings/urls.py
+
+update /btre/urls.py and add listings urls
+
+update /btre/btre/settings.py INSTALLED_APPS = [] for listings and realtors
+
+update /listings/views.py
+
+05 class done and practical not done
