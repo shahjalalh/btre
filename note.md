@@ -51,7 +51,7 @@ create and update /templates/partials/_navbar.html
 
 create and update /templates/partials/_topbar.html
 
-create new apps listings and realtors 
+create new apps listings and realtors <---
 ```
 $ python manage.py startapp listings
 $ python manage.py startapp realtors
