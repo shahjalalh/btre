@@ -72,3 +72,7 @@ update /btre/btre/settings.py INSTALLED_APPS = [] for listings and realtors
 update /listings/views.py
 
 05 class done and practical done
+
+## 06: Models, Migrations & Admin
+
+06: 01
