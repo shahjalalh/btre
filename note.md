@@ -10,7 +10,7 @@ update /btre/btre/settings.py INSTALLED_APPS = []
 
 update /pages/apps.py
 
-create and update /pages/urls.py <-------
+create and update /pages/urls.py
 
 update /pages/views.py
 
@@ -51,13 +51,13 @@ create and update /templates/partials/_navbar.html
 
 create and update /templates/partials/_topbar.html
 
-create new apps listings and realtors <---
+create new apps listings and realtors
 ```
 $ python manage.py startapp listings
 $ python manage.py startapp realtors
 ```
 
-create and update /templates/listings/listing.html
+create and update /templates/listings/listing.html <------
 
 create and update /templates/listings/listings.html
 
