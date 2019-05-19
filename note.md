@@ -57,7 +57,7 @@ $ python manage.py startapp listings
 $ python manage.py startapp realtors
 ```
 
-create and update /templates/listings/listing.html <------
+create and update /templates/listings/listing.html
 
 create and update /templates/listings/listings.html
 
@@ -71,4 +71,4 @@ update /btre/btre/settings.py INSTALLED_APPS = [] for listings and realtors
 
 update /listings/views.py
 
-05 class done and practical not done
+05 class done and practical done
