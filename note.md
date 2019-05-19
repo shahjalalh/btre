@@ -10,7 +10,7 @@ update /btre/btre/settings.py INSTALLED_APPS = []
 
 update /pages/apps.py
 
-create and update /pages/urls.py
+create and update /pages/urls.py <-------
 
 update /pages/views.py
 
