@@ -75,4 +75,6 @@ update /listings/views.py
 
 ## 06: Models, Migrations & Admin
 
+https://postgresapp.com/ for mac postgresql installer
+
 06: 01
