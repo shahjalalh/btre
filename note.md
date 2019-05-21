@@ -75,6 +75,33 @@ update /listings/views.py
 
 ## 06: Models, Migrations & Admin
 
-https://postgresapp.com/ for mac postgresql installer
+https://postgresapp.com/ for Mac PostgreSQL installer
 
-06: 01
+To set the password in new PostgreSQL installation, go to postgresql console -
+```
+postgres=# \password postgres
+Enter new password: 
+postgres=# 
+postgres=# CREATE DATAGASE btredb OWNER postgres;
+postgres=# 
+postgres=# \l
+postgres=# 
+postgres=# \q
+```
+
+Install pgadmin 4 in mac
+
+Install Postgres dependencies in django project. In the virtual environment - 
+```
+$ pip install psycopg2 psycopg2-binary
+```
+
+update /btre/settings.py for PostgreSQL db DATABASES = {} 
+
+run migration - 
+```
+$ python manage.py migrate
+
+```
+
+06: 03
