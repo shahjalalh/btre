@@ -136,4 +136,8 @@ update btre/btre/urls.py with + static(settings.MEDIA_URL, ....)
 
 populate data in realtors and listings from html template.
 
-06: 08
+create and update /templates/admin/base_site.html
+
+create and update /btre/btre/static/css/admin.css  
+
+06: 09
