@@ -103,5 +103,24 @@ run migration -
 $ python manage.py migrate
 
 ```
+Django fields reference:
 
-06: 03
+https://docs.djangoproject.com/en/2.2/ref/models/fields/
+
+
+update listings/models.py Listing model
+
+update realtors/models.py Realtor model
+
+```
+$ python manage.py makemigrations
+$ pip install Pillow
+$ python manage.py makemigrations
+$ python manage.py migrate
+```
+
+```
+$ python manage.py help
+```
+
+06: 06
