@@ -140,4 +140,8 @@ create and update /templates/admin/base_site.html
 
 create and update /btre/btre/static/css/admin.css  
 
-06: 09
+update /listings/admin.py for admin custom list view (ListingAdmin)
+
+update /realtors/admin.py for admin custom list view (RealtorAdmin)
+
+06: class done and practical not done
