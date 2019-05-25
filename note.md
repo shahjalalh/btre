@@ -112,6 +112,7 @@ update listings/models.py Listing model
 
 update realtors/models.py Realtor model
 
+migrate
 ```
 $ python manage.py makemigrations
 $ pip install Pillow
@@ -119,8 +120,20 @@ $ python manage.py makemigrations
 $ python manage.py migrate
 ```
 
+creating superuser
 ```
 $ python manage.py help
+$ python manage.py createsuperuser
 ```
 
-06: 06
+> **Staff status** - user can login to admin area or not
+
+update listings/admin.py
+
+update btre/btre/settings.py MEDIA_URL and MEDIA_ROOT
+
+update btre/btre/urls.py with + static(settings.MEDIA_URL, ....)
+
+populate data in realtors and listings from html template.
+
+06: 08
