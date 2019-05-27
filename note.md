@@ -108,7 +108,7 @@ Django fields reference:
 https://docs.djangoproject.com/en/2.2/ref/models/fields/
 
 
-update listings/models.py Listing model
+update listings/models.py Listing model <-----------
 
 update realtors/models.py Realtor model
 
