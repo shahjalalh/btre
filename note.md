@@ -148,5 +148,20 @@ update /realtors/admin.py for admin custom list view (RealtorAdmin)
 
 ## 07: View Methods, Display & Search
 
+VS code may not recognize django methods and show error. Install in the VM -
+```
+$ pip install pylint-django
+```
 
-07: 01
+And, add to the .vscode/settings.json
+```
+{"python.linting.pylintArgs": [
+     "--load-plugins=pylint_django"
+],}
+```
+
+update /listings/views.py index method 
+
+update /templates/listings/listings.html
+
+07: 02
