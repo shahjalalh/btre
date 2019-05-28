@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # developed
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig',
 ]
 
 MIDDLEWARE = [

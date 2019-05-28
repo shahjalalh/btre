@@ -108,7 +108,7 @@ Django fields reference:
 https://docs.djangoproject.com/en/2.2/ref/models/fields/
 
 
-update listings/models.py Listing model <-----------
+update listings/models.py Listing model 
 
 update realtors/models.py Realtor model
 
@@ -128,7 +128,7 @@ $ python manage.py createsuperuser
 
 > **Staff status** - user can login to admin area or not
 
-update listings/admin.py
+update listings/admin.py <-----------
 
 update btre/btre/settings.py MEDIA_URL and MEDIA_ROOT
 
