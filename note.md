@@ -128,11 +128,11 @@ $ python manage.py createsuperuser
 
 > **Staff status** - user can login to admin area or not
 
-update listings/admin.py <-----------
+update listings/admin.py 
 
 update btre/btre/settings.py MEDIA_URL and MEDIA_ROOT
 
-update btre/btre/urls.py with + static(settings.MEDIA_URL, ....)
+update btre/btre/urls.py with + static(settings.MEDIA_URL, ....) <-----------
 
 populate data in realtors and listings from html template.
 
