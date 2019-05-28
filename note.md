@@ -145,3 +145,8 @@ update /listings/admin.py for admin custom list view (ListingAdmin)
 update /realtors/admin.py for admin custom list view (RealtorAdmin)
 
 06: class done and practical not done
+
+## 07: View Methods, Display & Search
+
+
+07: 01
