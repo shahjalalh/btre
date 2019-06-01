@@ -174,7 +174,7 @@ update /templates/pages/index.html
 
 update /templates/pages/about.html
 
-update /templates/listings/listing.html
+update /templates/listings/listing.html <---------------
 
 update /listings/views.py -> listing()
 
