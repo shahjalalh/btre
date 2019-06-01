@@ -168,6 +168,15 @@ update /btre/btre/settings.py INSTALLED_APPS -> .humanize
 
 django pagination https://docs.djangoproject.com/en/2.2/topics/pagination/
 
+update /pages/views.py
+
+update /templates/pages/index.html
+
+update /templates/pages/about.html
+
+update /templates/listings/listing.html
+
+update /listings/views.py -> listing()
 
 
-07: 04
+07: 06
