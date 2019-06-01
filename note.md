@@ -164,4 +164,10 @@ update /listings/views.py index method
 
 update /templates/listings/listings.html
 
-07: 02
+update /btre/btre/settings.py INSTALLED_APPS -> .humanize
+
+django pagination https://docs.djangoproject.com/en/2.2/topics/pagination/
+
+
+
+07: 04
