@@ -174,9 +174,20 @@ update /templates/pages/index.html
 
 update /templates/pages/about.html
 
-update /templates/listings/listing.html <---------------
+update /templates/listings/listing.html
 
 update /listings/views.py -> listing()
 
+create and update /listings/choices.py <---------
 
-07: 06
+update /pages/views.py with choices
+
+update /templates/pages/index.html search fields
+
+update /templates/listings/search.html
+
+update /listings/views.py import choices
+
+update /listings/views.py search()
+
+07: class done and practical not done
