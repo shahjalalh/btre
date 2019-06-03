@@ -194,4 +194,33 @@ update /listings/views.py search()
 
 ## 08: Accounts & Authentication
 
-08: 01
+Create new app accounts
+```
+$ python manage.py accounts
+```
+
+create and update /accounts/urls.py
+
+update /btre/btre/settings.py INSTALLED_APP
+
+update /btre/btre/urls.py
+
+create and update /templates/login.html
+
+create and update /templates/register.html
+
+create and update /templates/dashboard.html
+
+update /accounts/views.py
+
+update /templates/partials/_navbar.html register and login
+
+django messaging app - https://docs.djangoproject.com/en/2.2/ref/contrib/messages/
+
+create and update /templates/partials/_alerts.html
+
+update /templates/accounts/register.html include alert()
+
+create and update /btre/btre/static/js/main.js
+
+08: 04
