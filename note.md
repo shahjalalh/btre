@@ -178,7 +178,7 @@ update /templates/listings/listing.html
 
 update /listings/views.py -> listing()
 
-create and update /listings/choices.py <---------
+create and update /listings/choices.py
 
 update /pages/views.py with choices
 
@@ -190,4 +190,8 @@ update /listings/views.py import choices
 
 update /listings/views.py search()
 
-07: class done and practical not done
+07: class done and practical done
+
+## 08: Accounts & Authentication
+
+08: 01
