@@ -223,4 +223,4 @@ update /templates/accounts/register.html include alert()
 
 create and update /btre/btre/static/js/main.js
 
-08: 04
+08: 02
