@@ -217,13 +217,20 @@ update /templates/partials/_navbar.html register and login
 
 django messaging app - https://docs.djangoproject.com/en/2.2/ref/contrib/messages/
 
+update /btre/btre/settings.py
+
 create and update /templates/partials/_alerts.html
 
 update /templates/accounts/register.html include alert()
 
 create and update /btre/btre/static/js/main.js
 
-08: 03
+```
+$ python manage.py collectstatic
+$ 
+```
+
+08: 04
 
 Train No. & Name: 12504 / KYQ BNC HUMSAFAR
 Date Of Journey: 07-Aug-2019
