@@ -223,4 +223,7 @@ update /templates/accounts/register.html include alert()
 
 create and update /btre/btre/static/js/main.js
 
-08: 02
+08: 03
+
+Train No. & Name: 12504 / KYQ BNC HUMSAFAR
+Date Of Journey: 07-Aug-2019
