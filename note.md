@@ -230,7 +230,9 @@ $ python manage.py collectstatic
 $ 
 ```
 
-08: 04
+update /pages/index.html
+
+08: 05
 
 Train No. & Name: 12504 / KYQ BNC HUMSAFAR
-Date Of Journey: 07-Aug-2019
+
