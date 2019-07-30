@@ -232,7 +232,9 @@ $
 
 update /pages/index.html
 
-08: 05
+update /templates/accounts/dashboard.html
+
+08: 06:2
 
 Train No. & Name: 12504 / KYQ BNC HUMSAFAR
 
