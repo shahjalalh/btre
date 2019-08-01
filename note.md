@@ -234,7 +234,27 @@ update /pages/index.html
 
 update /templates/accounts/dashboard.html
 
-08: 06:2
+update /partials/_navbar.html
+
+update /accounts/views.py
+
+update /templates/base.html title
+
+update /pages/index.html block title
+
+update /templates/listings/listings.html block title
+
+update /templates/listings/search.html block title
+
+update /templates/listings/listing.html block title
+
+update /templates/accounts/register.html block title
+
+update /templates/accounts/login.html block title
+
+update /templates/accounts/dashboard.html block title
+
+08: class done and practical done
 
 Train No. & Name: 12504 / KYQ BNC HUMSAFAR
 
