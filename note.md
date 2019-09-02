@@ -254,7 +254,6 @@ update /templates/accounts/login.html block title
 
 update /templates/accounts/dashboard.html block title
 
-08: class done and practical done
+08: class done and practical not done
 
-Train No. & Name: 12504 / KYQ BNC HUMSAFAR
 
