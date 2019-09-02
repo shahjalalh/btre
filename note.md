@@ -203,9 +203,9 @@ create and update /accounts/urls.py
 
 update /btre/btre/settings.py INSTALLED_APP
 
-update /btre/btre/urls.py <---------------------------
+update /btre/btre/urls.py 
 
-create and update /templates/login.html
+create and update /templates/login.html <---------------------------
 
 create and update /templates/register.html
 
