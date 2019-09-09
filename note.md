@@ -205,13 +205,13 @@ update /btre/btre/settings.py INSTALLED_APP
 
 update /btre/btre/urls.py 
 
-create and update /templates/login.html <---------------------------
+create and update /templates/login.html
 
 create and update /templates/register.html
 
 create and update /templates/dashboard.html
 
-update /accounts/views.py
+update /accounts/views.py <---------------------------
 
 update /templates/partials/_navbar.html register and login
 
