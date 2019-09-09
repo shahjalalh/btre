@@ -211,13 +211,13 @@ create and update /templates/register.html
 
 create and update /templates/dashboard.html
 
-update /accounts/views.py <---------------------------
+update /accounts/views.py 
 
 update /templates/partials/_navbar.html register and login
 
 django messaging app - https://docs.djangoproject.com/en/2.2/ref/contrib/messages/
 
-update /btre/btre/settings.py
+update /btre/btre/settings.py <---------------------------
 
 create and update /templates/partials/_alerts.html
 
