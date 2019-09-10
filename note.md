@@ -217,7 +217,7 @@ update /templates/partials/_navbar.html register and login
 
 django messaging app - https://docs.djangoproject.com/en/2.2/ref/contrib/messages/
 
-update /btre/btre/settings.py <---------------------------
+update /btre/btre/settings.py
 
 create and update /templates/partials/_alerts.html
 
@@ -254,6 +254,8 @@ update /templates/accounts/login.html block title
 
 update /templates/accounts/dashboard.html block title
 
-08: class done and practical not done
+08: class done and practical done
 
+## 09: Contact Inquiries
 
+09: 01
