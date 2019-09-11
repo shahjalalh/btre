@@ -258,4 +258,33 @@ update /templates/accounts/dashboard.html block title
 
 ## 09: Contact Inquiries
 
-09: 01
+```
+$ python manage.py startapp contacts
+
+```
+
+update /contacts/models.py
+
+```
+$ python manage.py migrate
+```
+
+check in pgadmin contacts table
+
+update contacts/admin.py
+
+login in admin and check if contacts is created
+
+update /templates/listings/listing.html form action
+
+create and update /contacts/urls.py
+
+update /btre/btre/urls.py
+
+update /contacts/views.py
+
+check from "Make An Inquiry" if Name and Email is loading for logged in user
+
+
+
+09: 04
