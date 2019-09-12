@@ -285,6 +285,9 @@ update /contacts/views.py
 
 check from "Make An Inquiry" if Name and Email is loading for logged in user
 
+Sending email: https://docs.djangoproject.com/en/2.2/topics/email/ 
+
+update /btre/settings.py # email config
 
 
-09: 04
+09: 06
