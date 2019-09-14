@@ -289,5 +289,6 @@ Sending email: https://docs.djangoproject.com/en/2.2/topics/email/
 
 update /btre/settings.py # email config
 
+update /accounts/dashboard.html
 
-09: 06
+09: class done and practical not done
