@@ -291,4 +291,8 @@ update /btre/settings.py # email config
 
 update /accounts/dashboard.html
 
-09: class done and practical not done
+09: class done and practical done
+
+## 10. Django Deployment
+
+10: 01
