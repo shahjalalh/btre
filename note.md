@@ -295,4 +295,136 @@ update /accounts/dashboard.html
 
 ## 10. Django Deployment
 
-10: 01
+Create a git repo in github as private. 
+
+Create a **.gitignore** in the the project folder.
+
+```
+$ cat .gitignore
+
+# ------------------
+
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+/media
+venv
+/static
+
+```
+
+Now run ```git add .``` , ```git commit -m "work summery"``` and ```git push -u origin master```
+
+Django Deployment to Ubuntu 18.04: https://gist.github.com/bradtraversy/cfa565b879ff1458dba08f423cb01d71
+
+Go to the home directory to setup SSH - 
+```
+$ cd ~
+$ ls -la
+...
+.ssh
+...
+$ ls ./.ssh
+$ ssh-keygen
+Enter file in which to save the key: /users/shahjalalh/.ssh/id_rsa_do
+Enter passphrase:
+Enter same passphrase again:
+....
+$ cat ./.ssh/id_rsa_do.pug
+
+```
+copy the text and paste to Digital Ocean SSH key -
+<img src="./media/images/1-setup-ssh-key-in-digitalocean.png">
+
+Login from terminal with ssh:
+```
+$ ssh root@digital.ocean.server.ip
+
+# if : Permission denied (publickey)
+# if your renamed the public key it may show
+
+$ ssh-add ./.ssh/id_rsa_do
+$ ssh root@digital.ocean.server.ip
+$ 
+```
+
+Adding new user and stop root login in the droplet:
+```
+root@ubuntu1:~# adduser djangoadmin
+root@ubuntu1:~# usermod -aG sudo djangoadmin
+root@ubuntu1:~# exit
+
+$ ssh djangoadmin@digital.ocean.server.ip 
+...
+Permission denied
+# this is because the ssh is added is for root user
+```
+
+Log back in root:
+```
+$ ssh root@digital.ocean.server.ip
+root@ubuntu1:~# cd /home/djangoadmin
+root@ubuntu1:~# mkdir .ssh
+root@ubuntu1:~# ls -a
+root@ubuntu1:~# cd .ssh
+root@ubuntu1:~# nano authorized_keys
+root@ubuntu1:~# 
+```
+
+Copy the rsa content into authorized_keys
+In the local terminal -
+```
+$ cat ./.ssh/id_rsa_do.pub
+
+# the the cloud VPS
+root@ubuntu1:~# nano authorized_keys
+# and paste text
+
+root@ubuntu1:~# cat authorized_keys
+root@ubuntu1:~# exit
+```
+
+Now SSH with djangoadmin
+```
+$ ssh djangoadmin@digital.ocean.server.ip 
+```
+
+Now stop the ```root``` login:
+```
+$ sudo nano /etc/ssh/sshd_config
+
+...
+PermitRootLogin no
+PasswordAuthentication no
+...
+```
+
+**Reload ```sshd``` service**
+```
+root@ubuntu1:~# sudo systemctl reload sshd
+```
+
+**References:**
+- https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
+
+- https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04
+
+- https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-debian-8
+
+- https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-debian-9
+
+
+**Simple Firewall Setup:**
+
+```
+$ sudo ufw app list
+$ sudo ufw allow OpenSSH
+$ sudo ufw enable
+$ sudo ufw status
+$  
+```
+
+10: 04
