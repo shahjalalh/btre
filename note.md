@@ -447,4 +447,34 @@ $ sudo -u postgres psql
 # \q
 ```
 
-10: 05
+**Virtual Environment in the ubuntu droplet**
+
+```
+$ sudo apt install python3-venv
+$ mkdir pyapps
+$ cd pyapps
+$ python3 -m venv ./venv
+$ source venv/bin/activate
+$ 
+```
+
+Collect the dependencies from local development environment:
+```
+$ pip freeze > requirements.txt
+$ git add .
+$ git commit -m "added requirements"
+$ git push -u origin master
+$ 
+```
+
+Now clone project in Ubuntu droplet:
+```
+$ git clone https://github.com/yourgithubname/btre_project.git
+$ ls
+$ ls btre_project
+$ cd btre_project
+$ pip install -r requirements.txt
+$ 
+```
+
+10: 06
