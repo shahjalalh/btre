@@ -427,4 +427,24 @@ $ sudo ufw status
 $  
 ```
 
-10: 04
+Login to remote droplet as djangoadmin:
+```
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx curl
+$ 
+``` 
+
+**PostgreSQL Database & User Setup**
+```
+$ sudo -u postgres psql
+# CREATE DATABASE btre_prod;
+# CREATE USER dbadmin WITH PASSWORD 'abc123!';
+# ALTER ROLE dbadmin SET client_encoding TO 'utf8';
+# ALTER ROLE dbadmin SET default_transaction_isolation TO 'read committed';
+# ALTER ROLE dbadmin SET timezone TO 'UTC';
+# GRANT ALL PRIVILEGES ON DATABASE btre_prod TO dbadmin;
+# \q
+```
+
+10: 05
