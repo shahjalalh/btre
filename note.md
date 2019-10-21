@@ -477,4 +477,44 @@ $ pip install -r requirements.txt
 $ 
 ```
 
-10: 06
+**Local Settings Setup:**
+
+https://stackoverflow.com/questions/4909958/django-local-settings
+
+Add code to your settings.py file and push to server:
+
+```python
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+```
+
+Create a file called **local_settings.py** on your ubuntu droplet server along side of **settings.py** and add the following:
+
+```python
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'q!xu$p9a#ao==#bl_!*d+hg5et2hyl8o(p6v_3kr9-ug@!$)i+'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+ALLOWED_HOSTS = ['digital.ocean.ip.address']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'your_account@gmail.com'
+EMAIL_HOST_PASSWORD = 'your account’s password'
+
+```
+
+10: 07
