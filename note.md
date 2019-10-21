@@ -517,4 +517,203 @@ EMAIL_HOST_PASSWORD = 'your account’s password'
 
 ```
 
-10: 07
+```
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py createsuperuser
+$ python manage.py collectstatic
+$ ls static
+$ sudo ufw allow 8000
+$ python manage.py runserver
+$ python manage.py runserver 0.0.0.0:8000
+$ 
+```
+
+### Gunicorn Setup
+
+Install gunicorn
+```
+$ pip install gunicorn
+```
+Add to requirements.txt
+
+```
+$ pip freeze > requirements.txt
+```
+
+Test Gunicorn serve
+```
+$ gunicorn --bind 0.0.0.0:8000 btre.wsgi
+```
+
+Your images, etc will be gone
+Stop server & deactivate virtual env
+```
+ctrl-c
+$ deactivate
+```
+
+Open ```gunicorn.socket``` file
+```
+$ sudo nano /etc/systemd/system/gunicorn.socket
+```
+
+Copy this code, paste it in and save
+```
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+```
+
+Open ```gunicorn.service``` file
+```
+$ sudo nano /etc/systemd/system/gunicorn.service
+```
+
+Copy this code, paste it in and save
+```
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=djangoadmin
+Group=www-data
+WorkingDirectory=/home/djangoadmin/pyapps/btre_project
+ExecStart=/home/djangoadmin/pyapps/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          btre.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Start and enable Gunicorn socket
+```
+$ sudo systemctl start gunicorn.socket
+$ sudo systemctl enable gunicorn.socket
+```
+
+Check status of guinicorn
+```
+$ sudo systemctl status gunicorn.socket
+```
+
+Check the existence of ```gunicorn.sock```
+```
+$ file /run/gunicorn.sock
+```
+
+### NGINX Setup
+
+Create project folder
+```
+$ sudo nano /etc/nginx/sites-available/btre_project
+```
+
+Copy this code and paste into the file
+```
+server {
+    listen 80;
+    server_name YOUR_IP_ADDRESS;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/djangoadmin/pyapps/btre_project;
+    }
+    
+    location /media/ {
+        root /home/djangoadmin/pyapps/btre_project;    
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+}
+```
+
+Enable the file by linking to the sites-enabled dir
+```
+$ sudo ln -s /etc/nginx/sites-available/btre_project /etc/nginx/sites-enabled
+```
+
+Test NGINX config
+```
+$ sudo nginx -t
+```
+
+Restart NGINX
+```
+$ sudo systemctl restart nginx
+```
+
+Remove port 8000 from firewall and open up our firewall to allow normal traffic on port 80
+```
+$ sudo ufw delete allow 8000
+$ sudo ufw allow 'Nginx Full'
+```
+
+You will probably need to up the max upload size to be able to create listings with images
+Open up the nginx conf file
+```
+$ sudo nano /etc/nginx/nginx.conf
+```
+
+Add this to the http{} area
+```
+client_max_body_size 20M;
+```
+
+**Reload NGINX**
+```
+$ sudo systemctl restart nginx
+```
+
+**First complete all the configuration with Gunicorn and Nginx then add test data. Otherwise you can face some issues of media.**
+
+**Media File Issue**
+You may have some issues with images not showing up. I would suggest, deleting all data and starting fresh as well as removeing the "photos" folder in the "media folder"
+```
+$ sudo rm -rf media/photos
+$ ls media
+```
+
+### Domain Setup
+
+Search for your domain name: https://www.namecheap.com/
+
+Go to your domain registrar and create the following a record
+```
+@  A Record  YOUR_IP_ADDRESS
+www  CNAME  example.com
+```
+
+**Go to ```local_settings.py``` on the server and change "ALLOWED_HOSTS" to include the domain**
+```
+ALLOWED_HOSTS = ['IP_ADDRESS', 'example.com', 'www.example.com']
+```
+
+Edit /etc/nginx/sites-available/btre_project
+```
+server {
+    listen: 80;
+    server_name xxx.xxx.xxx.xxx example.com www.example.com;
+}
+```
+
+Reload NGINX & Gunicorn
+```
+# sudo systemctl restart nginx
+# sudo systemctl restart gunicorn
+```
+
+10: class done and practical not done
